@@ -2,7 +2,7 @@
 var products = [
    {
         id: 1,
-        name: 'Cooking oil',
+        name: 'Comunist Stop',
         price: 10.5,
         type: 'grocery',
         offer: {
@@ -12,13 +12,13 @@ var products = [
     },
     {
         id: 2,
-        name: 'Pasta',
+        name: 'Semi-empty Room',
         price: 6.25,
         type: 'grocery'
     },
     {
         id: 3,
-        name: 'Instant cupcake mixture',
+        name: 'White Museum',
         price: 5,
         type: 'grocery',
         offer: {
@@ -28,37 +28,37 @@ var products = [
     },
     {
         id: 4,
-        name: 'All-in-one',
+        name: 'Antique Sculpture',
         price: 260,
         type: 'beauty'
     },
     {
         id: 5,
-        name: 'Zero Make-up Kit',
+        name: 'Medieval Castle',
         price: 20.5,
         type: 'beauty'
     },
     {
         id: 6,
-        name: 'Lip Tints',
+        name: 'Divine Ascension',
         price: 12.75,
         type: 'beauty'
     },
     {
         id: 7,
-        name: 'Lawn Dress',
+        name: 'Cute Dog',
         price: 15,
         type: 'clothes'
     },
     {
         id: 8,
-        name: 'Lawn-Chiffon Combo',
+        name: 'White Horse',
         price: 19.99,
         type: 'clothes'
     },
     {
         id: 9,
-        name: 'Toddler Frock',
+        name: 'Royal Fish',
         price: 9.99,
         type: 'clothes'
     }
@@ -157,7 +157,7 @@ function printCart() {
         totalCostPromotions += cart[i].subtotalWithDiscount;
     }
     document.getElementById("cart_list").innerHTML = cartListString;
-    document.getElementById("total_price").innerHTML = totalCostPromotions;
+    document.getElementById("total_price").innerHTML = totalCostPromotions.toFixed(2);
 }
 
 function calculateNumProducts() {

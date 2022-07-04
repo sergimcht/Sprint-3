@@ -19,7 +19,7 @@ function validate() {
   	var errorPhone = document.getElementById("errorPhone");  
 	
 	// Validate fields entered by the user: name, phone, password, and email
-	if(fName.value == "" || fName.length < 3 || !validateLetters(fName.value)){
+	if(fName.value == "" || fName.value.length < 3 || !validateLetters(fName.value)){
 		error++;
 		errorName.style.display = "block";
 		fName.style.backgroundColor = "lightcoral";
@@ -30,7 +30,7 @@ function validate() {
 		fName.style.color = "white";
 	}
 
-	if(fEmail.value == "" || fEmail.length < 3 || !validateMail(fEmail.value)){
+	if(fEmail.value == "" || fEmail.value.length < 3 || !validateMail(fEmail.value)){
 		error++;
 		errorEmail.style.display = "block";
 		fEmail.style.backgroundColor = "lightcoral";
@@ -41,7 +41,7 @@ function validate() {
 		fEmail.style.color = "white";
 	}
 
-	if(fAddress.value == "" || fAddress.length < 3){
+	if(fAddress.value == "" || fAddress.value.length < 3){
 		error++;
 		errorAddress.style.display = "block";
 		fAddress.style.backgroundColor = "lightcoral";
@@ -52,7 +52,7 @@ function validate() {
 		fAddress.style.color = "white";
 	}
 
-	if(fLastN.value == "" || fLastN.length < 3 || !validateLetters(fLastN.value)){
+	if(fLastN.value == "" || fLastN.value.length < 3 || !validateLetters(fLastN.value)){
 		error++;
 		errorLastN.style.display = "block";
 		fLastN.style.backgroundColor = "lightcoral";
@@ -63,7 +63,7 @@ function validate() {
 		fLastN.style.color = "white";
 	}
 
-	if(fPassword.value == "" || fPassword.length < 3 || !validateLettersNumbers(fPassword.value)){
+	if(fPassword.value == "" || fPassword.value.length < 3 || !validateLettersNumbers(fPassword.value)){
 		error++;
 		errorPassword.style.display = "block";
 		fPassword.style.backgroundColor = "lightcoral";
@@ -74,7 +74,7 @@ function validate() {
 		fPassword.style.color = "white";
 	}
 
-	if(fPhone.value == "" || fPhone.length < 3 || !validateNumbers(fPhone.value)){
+	if(fPhone.value == "" || fPhone.value.length < 3 || !validateNumbers(fPhone.value)){
 		error++;
 		errorPhone.style.display = "block";
 		fPhone.style.backgroundColor = "lightcoral";
@@ -87,25 +87,27 @@ function validate() {
 
 	//////
 	
-	if(error>0){
+	/*if(error>0){
 		alert("Error");
 	}else{
 		alert("OK");
-	}
+	}*/
 
-	function validateLetters(string) {
-		return /^[a-zA-Z]+$/.test(string);
-	}
+	
+}
 
-	function validateNumbers(string) {
-		return /^[0-9]+$/.test(string);
-	}
+function validateLetters(string) {
+	return /^[a-zA-Z]+$/.test(string);
+}
 
-	function validateLettersNumbers(string) {
-		return /^[a-zA-Z0-9]+$/.test(string);
-	}
+function validateNumbers(string) {
+	return /^[0-9]+$/.test(string);
+}
 
-	function validateMail(string) {
-		return /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi.test(string);
-	}
+function validateLettersNumbers(string) {
+	return /^[a-zA-Z0-9]+$/.test(string);
+}
+
+function validateMail(string) {
+	return /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi.test(string);
 }
